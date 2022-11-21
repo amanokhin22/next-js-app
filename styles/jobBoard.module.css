@@ -1,0 +1,208 @@
+.jobBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  height: 100%;
+  margin-top: 10px;
+}
+
+.boardAndPagination {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jobListItem {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 16px;
+  gap: 32px;
+  background: #FFFFFF;
+  box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 8px;
+  min-width: 1400px;
+}
+
+.widthImage {
+  width: 85px;
+  height: 85px;
+}
+
+.avatarsImage {
+  height: 85px;
+  border-radius: 50%;
+}
+
+.firstBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 26px;
+  min-width: 75%;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: bold;
+}
+
+.upperText {
+  font-family: "Proxima Nova", serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.625px;
+  color: #3A4562;
+}
+
+.downText {
+  font-family: "Proxima Nova", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.23619px;
+  color: #878D9D;
+  flex: none;
+  order: 2;
+  align-self: stretch;
+}
+
+.location {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  order: 3;
+}
+
+.address {
+  position: relative;
+  font-family: "Proxima Nova", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.23619px;
+  color: #878D9D;
+  padding-left: 5px;
+}
+
+.sideBarOfItem {
+  display: flex;
+  flex-direction: row;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.toggleItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 17px;
+  margin-left: 65px;
+  order: 3;
+}
+
+.rectangle {
+  width: 16px;
+  height: 20px;
+}
+
+.posted {
+  height: 67px;
+  font-family: "Proxima Nova", serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 25px;
+  display: flex;
+  align-items: flex-end;
+  text-align: right;
+  letter-spacing: 0.23619px;
+  color: #878D9D;
+}
+
+.root {
+  position: relative;
+  align-items: center;
+  margin-top: 15px;
+}
+.root li {
+  display: inline-block;
+}
+.root li a {
+  display: inline-block;
+  text-align: center;
+  width: 45px;
+  line-height: 42px;
+  height: 45px;
+  border: 1px solid #E8EBF3;
+  border-radius: 25px;
+  margin-right: 10px;
+  cursor: pointer;
+  color: #2A3047;
+}
+.root li a:hover {
+  background-color: #878D9D;
+}
+.root :global .selected a {
+  background-color: #384564;
+}
+
+@media screen and (max-width: 640px) {
+  .jobBoard {
+    width: 396px;
+  }
+  .jobListItem {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    max-width: 396px;
+    min-width: 396px;
+    gap: 8px;
+  }
+  .avatarsImage {
+    height: 66px;
+    width: 66px;
+  }
+  .rectangle {
+    display: none;
+  }
+  .posted {
+    height: 14px;
+    font-size: 16px;
+    line-height: 21px;
+  }
+  .rating {
+    width: 10px;
+    height: 10px;
+  }
+  .sideBarOfItem {
+    margin-left: -30px;
+  }
+  .widthImage {
+    width: 60px;
+    height: 60px;
+  }
+  .content {
+    width: 294px;
+  }
+}
+@media screen and (max-width: 720px) {
+  .jobListItem {
+    min-width: 680px;
+  }
+}
+
+/*# sourceMappingURL=jobBoard.module.css.map */
