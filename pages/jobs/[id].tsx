@@ -1,20 +1,27 @@
 import Head from "next/head";
 import JobDetailed from "../../components/jobDetailed/JobDetailed";
 import {useRouter} from "next/router";
-import {useEffect, useState} from "react";
-import {JobItem} from "../../types/types";
-import {jobsApi} from "../../api/jobsApi";
+import {useEffect} from "react";
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {setActiveJobId} from "../../redux/jobsSlice";
+import {fetchJobs} from "../../redux/asyncThunkJobs";
+import {selectActiveJob} from "../../selectors/selectors";
 
 export const JobDetailedPage = () => {
     const router = useRouter()
+    const dispatch = useAppDispatch();
+    const job = useAppSelector(selectActiveJob);
     const {id} = router.query
 
-    const [job, setJob] = useState<JobItem | null>(null);
+    useEffect(() => {
+        dispatch(setActiveJobId(id as string))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [id]);
 
     useEffect(() => {
-        jobsApi.getById(id as string).then(data => setJob(data))
-    }, [id])
-
+        dispatch(fetchJobs())
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div>

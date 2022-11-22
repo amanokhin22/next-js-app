@@ -1,36 +1,32 @@
 import styles from "../../styles/jobBoard.module.scss";
 import JobListItem from "./jobListItem/JobListItem";
-import {useEffect, useState} from "react";
-import {JobItem} from "../../types/types";
-import {jobsApi} from "../../api/jobsApi";
+import {useEffect} from "react";
 import {Pagination} from "../Pagination";
-
+import {useAppDispatch, useAppSelector} from "../../app/hooks";
+import {fetchJobs} from "../../redux/asyncThunkJobs";
+import {
+    selectCurrentPage,
+    selectLoading, selectPageCount, selectPageJobs,
+} from "../../selectors/selectors";
+import {setPage} from "../../redux/jobsSlice";
 
 const JobBoard = () => {
-    const [jobs, setJobs] = useState<JobItem[]>([]);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [loading, setLoading] = useState(true);
-    // const jobItem = useAppSelector(selectJobs)
-    //const dispatch = useAppDispatch();
+
+    const currentPage = useAppSelector(selectCurrentPage);
+    const loading = useAppSelector(selectLoading);
+    const pageJobs = useAppSelector(selectPageJobs);
+    const pagesCount = useAppSelector(selectPageCount);
+    const dispatch = useAppDispatch();
 
     useEffect(() => {
-       //dispatch(fetchJobs())
-
-        jobsApi.getAll().then(data => {
-            setJobs(data);
-            setLoading(false);
-        })
+        dispatch(fetchJobs())
+        dispatch(setPage(1))
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const onChangePage = (page: number) => {
-        setCurrentPage(page)
+        dispatch(setPage(page))
     };
-
-    const itemsPerPage = 10;
-    const pagesCount = Math.ceil(jobs.length / itemsPerPage);
-    const start = (currentPage - 1) * itemsPerPage;
-    const pageJobs = jobs.slice(start, start + itemsPerPage);
 
     return (
         <div className={styles.boardAndPagination}>

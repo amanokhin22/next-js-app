@@ -24,9 +24,7 @@ export const Contacts: FC<JobDetailedTypes> = ({jobItem}) => {
                     </div>
                     <span className={styles.phonePost}> {jobItem.phone} </span>
                     <span className={styles.phonePost}> {jobItem.email} </span>
-
                 </div>
-
             </div>
             <div className={styles.mapDescription}>
                 <Image className={styles.map} src={Map} alt=""/>

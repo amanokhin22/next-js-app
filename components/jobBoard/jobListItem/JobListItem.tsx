@@ -38,7 +38,6 @@ const JobListItem: FC<{ jobItem: JobItem }> = ({jobItem}) => {
                     <StarsRating/>
                     <ItemControls updatedAt={jobItem.updatedAt}/>
                 </div>
-
             </div>
         </div>
     )

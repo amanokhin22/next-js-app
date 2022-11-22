@@ -18,9 +18,4 @@ export const jobsApi = {
             return mockData
         }
     },
-    async getById(id: string): Promise<JobItem | null> {
-
-        const items: JobItem[] = await this.getAll();
-        return items.find(item => item.id === id) || null
-    },
 };

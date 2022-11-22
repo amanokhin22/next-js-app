@@ -34,6 +34,15 @@ export interface PostedJobTypes {
 }
 
 export interface JobsSliceState {
-    jobs: JobItem[],
-    loading: boolean,
+    jobs: JobItem[];
+    loading: boolean;
+    activeJobId: string;
+    pageSize: number;
+    page: number;
+}
+
+export type PaginationPropsType = {
+    currentPage: number,
+    onChangePage: (page: number) => void;
+    pagesCount: number;
 }

@@ -22,7 +22,6 @@ export const BottomBlock: FC<JobDetailedTypes> = ({jobItem}) => {
                         key={index} className={styles.buttonBenefits}>{type} </div>)
                 }
             </div>
-
             <div>
                 <div className={styles.attachedImagesText}>Attached images</div>
                 <div className={styles.attachedImages}>

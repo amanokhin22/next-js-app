@@ -1,7 +1,5 @@
 import Head from "next/head";
 import JobBoard from "../components/jobBoard/JobBoard";
-import {Provider} from "react-redux";
-import {store} from "../app/store";
 
 const Home = () => {
     return (

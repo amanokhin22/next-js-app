@@ -1,19 +1,24 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import {JobItem, JobsSliceState} from "../types/types";
+import {JobsSliceState} from "../types/types";
 import {fetchJobs} from "./asyncThunkJobs";
-
 
 const initialState: JobsSliceState = {
     jobs: [],
     loading: false,
+    activeJobId: "",
+    pageSize: 10,
+    page: 1,
 };
 
 const jobsSlice = createSlice({
-    name: 'jobsBoard',
+    name: 'jobs',
     initialState,
     reducers: {
-        setJobsList(state, action: PayloadAction<JobItem[]>) {
-            state.jobs = action.payload
+        setActiveJobId(state, action: PayloadAction<string>) {
+            state.activeJobId = action.payload;
+        },
+        setPage(state, action: PayloadAction<number>) {
+            state.page = action.payload;
         },
     },
     extraReducers: (builder) => {
@@ -21,17 +26,13 @@ const jobsSlice = createSlice({
             state.loading = true;
         });
 
-        // builder.addCase(fetchJobs.fulfilled, (state, action) => {
-        //     state.jobs = action.payload;
-        //     state.loading = false;
-        // });
-        builder.addCase(fetchJobs.rejected, (state) => {
-            state.jobs = [];
+        builder.addCase(fetchJobs.fulfilled, (state, action) => {
+            state.jobs = action.payload;
             state.loading = false;
         });
     },
 })
 
-export const {} = jobsSlice.actions;
+export const {setActiveJobId, setPage} = jobsSlice.actions;
 
 export default jobsSlice.reducer;

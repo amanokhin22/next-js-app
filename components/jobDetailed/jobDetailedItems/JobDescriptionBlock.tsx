@@ -8,7 +8,6 @@ export const JobDescriptionBlock: FC<JobDetailedTypes> = ({jobItem}) => {
         <>
             <div className={styles.jobDescriptionsBlock}>
                 <div className={styles.headOfDescription}>
-
                     <div className={styles.nameSalary}>
                         <div className={styles.jobName}>
                             {jobItem.title}
@@ -18,7 +17,6 @@ export const JobDescriptionBlock: FC<JobDetailedTypes> = ({jobItem}) => {
                             <span className={styles.brutto}>Brutto per year</span>
                         </div>
                     </div>
-
                 </div>
                 <Posted updatedAt={jobItem.updatedAt}/>
                 <div className={styles.jobDescription}>{jobItem.description}</div>
