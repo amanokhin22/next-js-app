@@ -18,7 +18,6 @@
   flex-direction: row;
   align-items: center;
   padding: 24px 16px;
-  gap: 32px;
   background: #FFFFFF;
   box-shadow: 2px 1px 7px rgba(0, 0, 0, 0.08), 0 2px 1px -1px rgba(0, 0, 0, 0.04), 0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 8px;
@@ -26,7 +25,6 @@
 }
 
 .widthImage {
-  width: 85px;
   height: 85px;
 }
 
@@ -70,7 +68,6 @@
   letter-spacing: 0.23619px;
   color: #878D9D;
   flex: none;
-  order: 2;
   align-self: stretch;
 }
 
@@ -79,7 +76,6 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  order: 3;
 }
 
 .address {
@@ -111,7 +107,6 @@
   align-items: flex-end;
   gap: 17px;
   margin-left: 65px;
-  order: 3;
 }
 
 .rectangle {
