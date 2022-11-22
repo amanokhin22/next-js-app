@@ -1,5 +1,5 @@
 import {RootState} from "../app/store";
 
 
-export const selectPaginate = (state: RootState) => state.paginate;
+export const selectJobs = (state: RootState) => state.jobs;
 

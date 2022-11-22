@@ -199,10 +199,5 @@
     width: 294px;
   }
 }
-@media screen and (max-width: 720px) {
-  .jobListItem {
-    min-width: 680px;
-  }
-}
 
 /*# sourceMappingURL=jobBoard.module.css.map */

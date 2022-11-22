@@ -1,11 +1,10 @@
 import styles from "../../styles/jobDetailed.module.scss";
 import {FC} from "react";
 import {JobDetailedTypes} from "../../types/types";
-import {Contacts} from "./Contacts";
-import {UpperBlockDetails} from "./UpperBlockDetails";
-import {JobDescriptionBlock} from "./JobDescriptionBlock";
-import {BottomBlock} from "./BottomBlock";
-
+import {Contacts} from "./jobDetailedItems/Contacts";
+import {UpperBlockDetails} from "./jobDetailedItems/UpperBlockDetails";
+import {JobDescriptionBlock} from "./jobDetailedItems/JobDescriptionBlock";
+import {BottomBlock} from "./jobDetailedItems/BottomBlock";
 
 const JobDetailed: FC<JobDetailedTypes> = ({jobItem}) => {
     return (

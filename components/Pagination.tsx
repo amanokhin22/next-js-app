@@ -1,4 +1,4 @@
-import React from "react";
+import React, {FC} from "react";
 import ReactPaginate from "react-paginate";
 import styles from "../styles/jobBoard.module.scss";
 
@@ -8,7 +8,7 @@ type PaginationPropsType = {
     pagesCount: number;
 }
 
-export const Pagination: React.FC<PaginationPropsType> = ({currentPage, onChangePage, pagesCount}) => {
+export const Pagination: FC<PaginationPropsType> = ({currentPage, onChangePage, pagesCount}) => {
 
     return (
         <ReactPaginate

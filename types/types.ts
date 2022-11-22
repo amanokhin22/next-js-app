@@ -1,3 +1,5 @@
+import {ReactNode} from "react";
+
 export interface JobItem {
     id: string;
     name: string;
@@ -17,4 +19,21 @@ export interface JobItem {
 
 export interface JobDetailedTypes {
     jobItem: JobItem;
+}
+
+export type layoutProps = {
+    children: ReactNode,
+};
+
+export interface PostedJobTypes {
+    updatedAt: string;
+}
+
+export interface PostedJobTypes {
+    updatedAt: string;
+}
+
+export interface JobsSliceState {
+    jobs: JobItem[],
+    loading: boolean,
 }

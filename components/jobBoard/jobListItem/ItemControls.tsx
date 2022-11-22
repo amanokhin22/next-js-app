@@ -3,16 +3,13 @@ import rectangle from "../../../public/icons/rectangle.svg";
 import styles from "../../../styles/jobBoard.module.scss";
 import moment from "moment";
 import {FC} from "react";
+import {PostedJobTypes} from "../../../types/types";
 
-export interface PostedJobTypes {
-    updatedAt: string;
-}
 
 export const ItemControls:FC<PostedJobTypes> = ({updatedAt}) => {
     const date = new Date(updatedAt);
     const now = moment();
     const days = now.diff(date, "days");
-
 
     return (
         <div className={styles.toggleItem}>
@@ -20,4 +17,4 @@ export const ItemControls:FC<PostedJobTypes> = ({updatedAt}) => {
             <p className={styles.posted}>Posted {days} days ago</p>
         </div>
     )
-}
+};

@@ -1,11 +1,10 @@
-import styles from "../../styles/jobDetailed.module.scss";
+import styles from "../../../styles/jobDetailed.module.scss";
 import Image from "next/image";
 import Link from "next/link";
-import Arrow from "../../public/icons/arrow.svg";
-import {JobDetailedTypes} from "../../types/types";
+import {JobDetailedTypes} from "../../../types/types";
 import {FC} from "react";
 
-export const BottomBlock:FC<JobDetailedTypes> = ({jobItem}) => {
+export const BottomBlock: FC<JobDetailedTypes> = ({jobItem}) => {
     return (
         <div className={styles.additionalInfo}>
             <h1 className={styles.additionalInfoH1}>Additional info</h1>
@@ -50,4 +49,4 @@ export const BottomBlock:FC<JobDetailedTypes> = ({jobItem}) => {
             </Link>
         </div>
     )
-}
+};
