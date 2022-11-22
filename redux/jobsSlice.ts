@@ -21,10 +21,10 @@ const jobsSlice = createSlice({
             state.loading = true;
         });
 
-        builder.addCase(fetchJobs.fulfilled, (state, action) => {
-            state.jobs = action.payload;
-            state.loading = false;
-        });
+        // builder.addCase(fetchJobs.fulfilled, (state, action) => {
+        //     state.jobs = action.payload;
+        //     state.loading = false;
+        // });
         builder.addCase(fetchJobs.rejected, (state) => {
             state.jobs = [];
             state.loading = false;
